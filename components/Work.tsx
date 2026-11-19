@@ -192,9 +192,8 @@ export default function Work() {
                 <button
                   key={g}
                   onClick={() => setSignGesture(g)}
-                  className={`px-3 py-1 text-[11px] uppercase transition-colors ${
-                    signGesture === g ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
-                  }`}
+                  className={`px-3 py-1 text-[11px] uppercase transition-colors ${signGesture === g ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
+                    }`}
                 >
                   {g === "hello" && "HELLO"}
                   {g === "thankyou" && "THANK YOU"}
@@ -357,17 +356,15 @@ export default function Work() {
             <div className="flex items-center gap-2 font-mono text-xs">
               <button
                 onClick={() => setActiveTab01("api")}
-                className={`px-3 py-1 text-[11px] transition-colors ${
-                  activeTab01 === "api" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
-                }`}
+                className={`px-3 py-1 text-[11px] transition-colors ${activeTab01 === "api" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
+                  }`}
               >
                 API &amp; VALIDATION ENGINE
               </button>
               <button
                 onClick={() => setActiveTab01("dashboard")}
-                className={`px-3 py-1 text-[11px] transition-colors ${
-                  activeTab01 === "dashboard" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
-                }`}
+                className={`px-3 py-1 text-[11px] transition-colors ${activeTab01 === "dashboard" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
+                  }`}
               >
                 MONGODB ATLAS DATA PREVIEW
               </button>
@@ -544,11 +541,10 @@ export default function Work() {
                     <button
                       key={b}
                       onClick={() => setSelectedBranch(b)}
-                      className={`px-3 py-1.5 text-xs transition-colors border ${
-                        selectedBranch === b
+                      className={`px-3 py-1.5 text-xs transition-colors border ${selectedBranch === b
                           ? "bg-[#4A1025] border-[#4A1025] text-[#EAE3D9] font-bold"
                           : "border-[#EAE3D9]/20 text-[#EAE3D9]/60 hover:border-[#EAE3D9]/40"
-                      }`}
+                        }`}
                     >
                       {b}
                     </button>
@@ -565,11 +561,10 @@ export default function Work() {
                     <button
                       key={s}
                       onClick={() => setSelectedService(s)}
-                      className={`px-3 py-1.5 text-xs transition-colors border ${
-                        selectedService === s
+                      className={`px-3 py-1.5 text-xs transition-colors border ${selectedService === s
                           ? "bg-[#4A1025] border-[#4A1025] text-[#EAE3D9] font-bold"
                           : "border-[#EAE3D9]/20 text-[#EAE3D9]/60 hover:border-[#EAE3D9]/40"
-                      }`}
+                        }`}
                     >
                       {s}
                     </button>
@@ -658,25 +653,22 @@ export default function Work() {
             <div className="flex items-center gap-2 font-mono text-xs">
               <button
                 onClick={() => setActiveSensor("ultrasonic")}
-                className={`px-3 py-1 text-[11px] transition-colors ${
-                  activeSensor === "ultrasonic" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
-                }`}
+                className={`px-3 py-1 text-[11px] transition-colors ${activeSensor === "ultrasonic" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
+                  }`}
               >
                 PROXIMITY RADAR
               </button>
               <button
                 onClick={() => setActiveSensor("imu")}
-                className={`px-3 py-1 text-[11px] transition-colors ${
-                  activeSensor === "imu" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
-                }`}
+                className={`px-3 py-1 text-[11px] transition-colors ${activeSensor === "imu" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
+                  }`}
               >
                 IMU GAIT SENSOR
               </button>
               <button
                 onClick={() => setActiveSensor("haptic")}
-                className={`px-3 py-1 text-[11px] transition-colors ${
-                  activeSensor === "haptic" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
-                }`}
+                className={`px-3 py-1 text-[11px] transition-colors ${activeSensor === "haptic" ? "bg-[#4A1025] text-[#EAE3D9] font-bold" : "text-[#EAE3D9]/60 hover:text-[#EAE3D9]"
+                  }`}
               >
                 HAPTIC FEEDBACK
               </button>
