@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────── */
+:root {
+  --maroon:  #4A1025;
+  --ivory:   #EAE3D9;
+  --charcoal:#211C1E;
+  --maroon-light: #6b1735;
+  --ivory-dark:   #d5cec4;
+}
+
+/* ─── Base Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--ivory);
+  color: var(--charcoal);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ─── Custom Cursor ──────────────────────────────────── */
+.custom-cursor {
+  width: 12px; height: 12px;
+  background: var(--maroon);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  mix-blend-mode: multiply;
+}
+.cursor-follower {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--maroon);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 999998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s linear, width 0.2s, height 0.2s, border-color 0.2s;
+  mix-blend-mode: multiply;
+}
+.cursor-hover .custom-cursor  { width: 22px; height: 22px; }
+.cursor-hover .cursor-follower{ width: 56px; height: 56px; }
+
+.cursor-modal .custom-cursor {
+  background: var(--maroon);
+  mix-blend-mode: normal;
+  border: 1px solid var(--ivory);
+}
+.cursor-modal .cursor-follower {
+  border-color: var(--maroon);
+  mix-blend-mode: normal;
+}
+
+/* ─── Typography ─────────────────────────────────────── */
+.font-anton    { font-family: var(--font-anton), sans-serif; }
+.font-bebas    { font-family: var(--font-bebas), sans-serif; }
+.font-inter    { font-family: var(--font-inter), sans-serif; }
+.font-mono     { font-family: var(--font-space-mono), monospace; }
+
+/* ─── Grain Texture Overlay ──────────────────────────── */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+}
+
+/* ─── Maroon Section ─────────────────────────────────── */
+.section-maroon {
+  background-color: var(--maroon);
+  color: var(--ivory);
+}
+
+/* ─── Utility: editorial border ─────────────────────── */
+.border-editorial { border: 1px solid var(--charcoal); }
+.border-editorial-maroon { border: 1px solid var(--maroon); }
+
+/* ─── Large Display Text ─────────────────────────────── */
+.display-xl {
+  font-family: 'Anton', sans-serif;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+.display-lg {
+  font-family: 'Bebas Neue', sans-serif;
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--ivory); }
+::-webkit-scrollbar-thumb { background: var(--maroon); }
+
+/* ─── Selection ──────────────────────────────────────── */
+::selection { background: var(--maroon); color: var(--ivory); }
+
+/* ─── Loading Screen ─────────────────────────────────── */
+.loader-line {
+  width: 0;
+  height: 2px;
+  background: var(--maroon);
+  animation: loadLine 1.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+@keyframes loadLine {
+  0%   { width: 0; }
+  60%  { width: 85%; }
+  100% { width: 100%; }
+}
+
+/* ─── Section transitions ────────────────────────────── */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--charcoal);
+  opacity: 0.15;
+}
+
+/* ─── Project card hover ─────────────────────────────── */
+.project-card {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.project-card:hover { transform: translateY(-4px); }
+
+/* ─── Skill tag ──────────────────────────────────────── */
+.skill-tag {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid currentColor;
+}
+
+/* ─── Animated underline ─────────────────────────────── */
+.underline-anim {
+  position: relative;
+}
+.underline-anim::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--maroon);
+  transition: width 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.underline-anim:hover::after { width: 100%; }
+
+/* ─── Scroll indicator ───────────────────────────────── */
+@keyframes scrollDown {
+  0%   { transform: translateY(0);   opacity: 1; }
+  100% { transform: translateY(12px); opacity: 0; }
+}
+.scroll-dot {
+  animation: scrollDown 1.6s ease-in-out infinite;
+}
+
+/* ─── Responsive hero text clamp ─────────────────────── */
+.hero-title {
+  font-size: clamp(5rem, 20vw, 22rem);
+  font-family: 'Anton', sans-serif;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+}
+.hero-sub {
+  font-size: clamp(1.4rem, 4vw, 3.5rem);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.08em;
+}
+.section-heading {
+  font-size: clamp(3rem, 10vw, 9rem);
+  font-family: 'Anton', sans-serif;
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Ticker Marquee Animation ───────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
