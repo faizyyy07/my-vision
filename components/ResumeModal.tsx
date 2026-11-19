@@ -154,6 +154,19 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <div className="border-l-2 border-[#4A1025] pl-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
                     <h3 className="font-inter font-bold text-sm text-[#211C1E]">
+                      SignBridge — Communication Without Barriers
+                    </h3>
+                    <span className="font-mono text-[11px] text-[#4A1025]">Python &bull; OpenCV &bull; MediaPipe &bull; AI / Computer Vision</span>
+                  </div>
+                  <p className="font-inter text-xs text-[#211C1E]/80 leading-relaxed">
+                    Real-time AI communication platform designed to bridge the communication gap for deaf and hard-of-hearing individuals.
+                    Tracks 21 3D hand landmarks via camera stream to recognize sign language gestures and translates them into readable natural text with low-latency inference.
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-[#4A1025] pl-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+                    <h3 className="font-inter font-bold text-sm text-[#211C1E]">
                       Business Website Development
                     </h3>
                     <span className="font-mono text-[11px] text-[#4A1025]">React.js &bull; Tailwind CSS &bull; JavaScript &bull; Vercel</span>
